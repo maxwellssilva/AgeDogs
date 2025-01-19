@@ -41,6 +41,14 @@ class ViewController: UIViewController {
         senha.translatesAutoresizingMaskIntoConstraints = false
         return senha
     }()
+    
+    private lazy var loginButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Login", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +61,7 @@ class ViewController: UIViewController {
         view.addSubview(emailTextField)
         view.addSubview(senhaLabel)
         view.addSubview(senhaTextField)
+        view.addSubview(loginButton)
         NSLayoutConstraint.activate([
             emailLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             emailLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -68,7 +77,10 @@ class ViewController: UIViewController {
             
             senhaTextField.topAnchor.constraint(equalTo: senhaLabel.bottomAnchor, constant: 10),
             senhaTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            senhaTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            senhaTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            loginButton.topAnchor.constraint(equalTo: senhaTextField.bottomAnchor, constant: 20),
+            loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
 
