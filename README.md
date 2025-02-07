@@ -1,3 +1,3 @@
 # AgeDogs
 
-App de estudos
+App exemplo para estudos e apresentação
